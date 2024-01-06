@@ -1,10 +1,11 @@
 import path from 'node:path'
 import { defineConfig } from 'vite'
 import Vue from '@vitejs/plugin-vue'
+import VueRouter from 'unplugin-vue-router/vite'
 
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
-
+import Layouts from 'vite-plugin-vue-layouts';
 
 export default defineConfig({
   resolve: {
@@ -14,6 +15,9 @@ export default defineConfig({
   },
 
   plugins: [
+    VueRouter({
+      dts: 'src/typed-router.d.ts',
+    }),
     Vue(),
     AutoImport({
       imports: [
@@ -24,5 +28,6 @@ export default defineConfig({
     Components({
       dts: 'src/components.d.ts',
     }),
+    Layouts()
   ],
 })
