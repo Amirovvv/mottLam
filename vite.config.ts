@@ -7,6 +7,8 @@ import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
 import Layouts from 'vite-plugin-vue-layouts';
 
+import UnoCSS from 'unocss/vite'
+
 export default defineConfig({
   resolve: {
     alias: {
@@ -28,6 +30,7 @@ export default defineConfig({
     Components({
       dts: 'src/components.d.ts',
     }),
-    Layouts()
+    Layouts(),
+    UnoCSS()
   ],
 })
