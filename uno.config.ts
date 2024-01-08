@@ -3,22 +3,30 @@ import {
   presetUno,
   presetIcons,
   presetWebFonts,
-  presetAttributify
+  // presetWind,
+  // presetAttributify,
+  // presetMini
 } from 'unocss'
 
 export default defineConfig({
   presets: [
     presetUno(),
-    presetAttributify(),
+    // presetMini({}),
+    // presetAttributify(),
     presetIcons({}),
     presetWebFonts({
       provider: 'google',
       fonts: {
         roboto: {
           name: 'Roboto',
-          weights: ['400', '600', '800'],
+          weights: ['400', '700', '900'],
         },
       }
     }),
   ],
+  // theme: {
+  //   colors: {
+  //     'chGreen': '#05a550'
+  //   }
+  // }
 })

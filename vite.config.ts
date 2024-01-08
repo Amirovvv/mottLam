@@ -33,4 +33,11 @@ export default defineConfig({
     Layouts(),
     UnoCSS()
   ],
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: `@import "@/styles/variables.scss";`,
+      },
+    },
+  },
 })

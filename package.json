@@ -17,6 +17,7 @@
     "@iconify-json/mdi": "^1.1.64",
     "@unocss/preset-attributify": "^0.58.3",
     "@unocss/preset-icons": "^0.58.3",
+    "@unocss/preset-mini": "^0.58.3",
     "@unocss/preset-uno": "^0.58.3",
     "@unocss/preset-web-fonts": "^0.58.3",
     "@vitejs/plugin-vue": "^4.5.2",
