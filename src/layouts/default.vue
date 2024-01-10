@@ -1,7 +1,7 @@
 <template>
+  <NavBar />
   <main>
-    <NavBar />
-    <h1>default layout</h1>
     <RouterView />
+    <h1>default layout</h1>
   </main>
 </template>

@@ -5,10 +5,10 @@
     <nav class="nav">
       <router-link to="/" class="nav-logo"
         >mottlam
-        <div class="i-mdi-mountain-outline"
+        <div class="i-mdi-mountain-outline text-3xl"
       /></router-link>
       <div class="nav-links">
-        <router-link to="/alphabet" class="nav-link">алфавит</router-link>
+        <router-link to="/" class="nav-link">алфавит</router-link>
       </div>
     </nav>
   </header>
@@ -16,7 +16,7 @@
 
 <style scoped lang="scss">
 header {
-  background: $primary-color;
+  background: #1b232c;
   color: #ffffff;
 }
 
@@ -45,7 +45,7 @@ header {
     padding: 20px;
 
     &:hover {
-      background: #0f8f4b;
+      background: #2a343f;
     }
   }
 }
