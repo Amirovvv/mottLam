@@ -1,8 +1,10 @@
 <template>
   <NavBar class="navbar" />
   <main>
-    <div class="navbar-back"><h1>добро пожаловать!</h1></div>
-    <RouterView />
+    <div class="navbar-back"><span>добро пожаловать!</span></div>
+    <div class="container">
+      <RouterView />
+    </div>
     <h1>home layout</h1>
   </main>
 </template>
@@ -34,7 +36,7 @@
       background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8));
     }
 
-    & h1 {
+    & span {
       position: absolute;
       top: 50%;
       left: 50%;
