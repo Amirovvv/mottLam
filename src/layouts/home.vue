@@ -5,8 +5,8 @@
     <div class="container">
       <RouterView />
     </div>
-    <h1>home layout</h1>
   </main>
+  <Footer />
 </template>
 
 <style scoped lang="scss">
