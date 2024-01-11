@@ -2,30 +2,30 @@
 
 <template>
   <header>
-    <nav class="nav">
-      <router-link to="/" class="nav-logo"
-        >mottlam
-        <div class="i-mdi-mountain-outline text-3xl"
-      /></router-link>
-      <div class="nav-links">
-        <router-link to="/" class="nav-link">алфавит</router-link>
-      </div>
-    </nav>
+    <div class="container">
+      <nav class="nav">
+        <router-link to="/" class="nav-logo"
+          >mottlam
+          <div class="i-mdi-mountain-outline text-3xl"
+        /></router-link>
+        <div class="nav-links">
+          <router-link to="/" class="nav-link">алфавит</router-link>
+        </div>
+      </nav>
+    </div>
   </header>
 </template>
 
 <style scoped lang="scss">
 header {
-  background: #1b232c;
-  color: #ffffff;
+  background: $primary-color;
 }
 
 .nav {
+  color: #ffffff;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 0 auto;
-  max-width: 1140px;
   text-transform: uppercase;
 
   &-logo {
