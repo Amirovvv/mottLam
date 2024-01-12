@@ -13,6 +13,5 @@ footer {
   background: $primary-color;
   padding: 20px 0;
   color: #ffffff;
-  margin-top: 40px;
 }
 </style>
