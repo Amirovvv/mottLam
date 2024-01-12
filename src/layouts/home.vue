@@ -1,7 +1,9 @@
 <template>
   <NavBar class="navbar" />
   <main>
-    <div class="navbar-back"><span>добро пожаловать!</span></div>
+    <div class="navbar-back">
+      <span class="animated animated-fade-in-up">добро пожаловать!</span>
+    </div>
     <div class="container">
       <RouterView />
     </div>
@@ -37,14 +39,15 @@
     }
 
     & span {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      text-align: center;
+      width: 100%;
+      display: flex;
       text-transform: uppercase;
       font-size: 46px;
+      font-weight: 900;
       word-spacing: 6px;
+      justify-content: center;
+      top: 50%;
+      position: absolute;
     }
   }
 }

@@ -7,6 +7,7 @@ import {
   // presetAttributify,
   // presetMini
 } from 'unocss'
+import { presetExtra } from 'unocss-preset-extra';
 
 export default defineConfig({
   presets: [
@@ -23,6 +24,7 @@ export default defineConfig({
         },
       }
     }),
+    presetExtra()
   ],
   // theme: {
   //   colors: {
