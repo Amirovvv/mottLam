@@ -7,6 +7,7 @@ import 'uno.css'
 import { createRouter, createWebHistory } from 'vue-router'
 import { routes } from 'vue-router/auto/routes'
 import { setupLayouts } from 'virtual:generated-layouts'
+import pinia from '@/store'
 
 
 const router = createRouter({
@@ -15,4 +16,4 @@ const router = createRouter({
 })
 
 
-createApp(App).use(router).mount('#app')
+createApp(App).use(router).use(pinia).mount('#app')
