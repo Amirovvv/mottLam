@@ -6,7 +6,7 @@
       <nav class="nav">
         <router-link to="/" class="nav-logo"
           >mottlam
-          <div class="i-mdi-mountain-outline text-3xl"
+          <div class="i-mdi-image-filter-hdr text-3xl"
         /></router-link>
         <div class="nav-links">
           <router-link to="/" class="nav-link">алфавит</router-link>
@@ -45,7 +45,7 @@ header {
     padding: 20px;
 
     &:hover {
-      background: #2a343f;
+      background: #408b64;
     }
   }
 }

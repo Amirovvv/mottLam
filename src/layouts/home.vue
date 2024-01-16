@@ -13,18 +13,16 @@
 
 <style scoped lang="scss">
 .navbar {
-  background: inherit;
   position: absolute;
   z-index: 2;
   width: 100%;
 
   &-back {
     background-image: url('@/assets/lam.jpg');
-    min-height: 640px;
-    background-position: center;
+    min-height: 480px;
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center 68%;
+    background-position: center 52%;
     position: relative;
     color: #ffffff;
 
@@ -48,6 +46,7 @@
       justify-content: center;
       top: 50%;
       position: absolute;
+      user-select: none;
     }
   }
 }
