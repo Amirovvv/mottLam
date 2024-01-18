@@ -1,8 +1,12 @@
+<script setup lang="ts">
+const { t } = useI18n()
+</script>
+
 <template>
   <NavBar class="navbar" />
   <main>
     <div class="navbar-back">
-      <span class="animated animated-fade-in-up">добро пожаловать!</span>
+      <span class="animated animated-fade-in-up">{{ t('intro.hi') }}</span>
     </div>
     <div class="container">
       <RouterView />

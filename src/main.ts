@@ -10,10 +10,12 @@ import { setupLayouts } from 'virtual:generated-layouts'
 import pinia from '@/store'
 
 
+import i18n from '@/modules/i18n'
+
 const router = createRouter({
   history: createWebHistory(),
   routes: setupLayouts(routes),
 })
 
 
-createApp(App).use(router).use(pinia).mount('#app')
+createApp(App).use(router).use(pinia).use(i18n).mount('#app')

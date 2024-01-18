@@ -1,4 +1,23 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+const { locale } = useI18n()
+
+const changeLang = () => {
+  const selectedLang = locale.value === 'ru' ? 'ce' : 'ru'
+  locale.value = selectedLang
+  localStorage.setItem('selected-lang', selectedLang)
+}
+
+const buttonLangText = computed(() => {
+  return locale.value === 'ru' ? 'ru' : 'ce'
+})
+
+onMounted(() => {
+  const getSelectedLang = localStorage.getItem('selected-lang')
+  if (getSelectedLang) {
+    locale.value = getSelectedLang
+  }
+})
+</script>
 
 <template>
   <header>
@@ -10,6 +29,9 @@
         /></router-link>
         <div class="nav-links">
           <router-link to="/" class="nav-link">алфавит</router-link>
+          <button class="nav-lang" @click="changeLang">
+            {{ buttonLangText }}
+          </button>
         </div>
       </nav>
     </div>
@@ -47,6 +69,12 @@ header {
     &:hover {
       background: #408b64;
     }
+  }
+
+  &-lang {
+    padding: 20px;
+    width: 60px;
+    text-transform: uppercase;
   }
 }
 </style>
