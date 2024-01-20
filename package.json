@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@vueuse/core": "^10.7.2",
+    "@vueuse/sound": "^2.0.1",
     "axios": "^1.6.5",
     "pinia": "^2.1.7",
     "unplugin-vue-router": "^0.7.0",

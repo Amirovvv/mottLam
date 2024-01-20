@@ -4,7 +4,8 @@ defineProps(['letter'])
 
 <template>
   <div class="letter">
-    <div class="i-mdi-volume-high text-28px text-orange letter-icon" />
+    <SoundWaves :sound="letter" />
+
     <div>{{ letter }}</div>
     <div class="letter-more">подробнее</div>
   </div>
