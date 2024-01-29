@@ -5,6 +5,7 @@ import VueRouter from 'unplugin-vue-router/vite'
 
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
+import { unheadVueComposablesImports } from '@unhead/vue'
 import Layouts from 'vite-plugin-vue-layouts';
 
 import UnoCSS from 'unocss/vite'
@@ -26,6 +27,7 @@ export default defineConfig({
         'vue',
         'vue-i18n',
         '@vueuse/core',
+        unheadVueComposablesImports,
       ],
       dts: 'src/auto-imports.d.ts',
     }),

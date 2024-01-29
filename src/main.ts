@@ -8,7 +8,9 @@ import { createRouter, createWebHistory } from 'vue-router'
 import { routes } from 'vue-router/auto/routes'
 import { setupLayouts } from 'virtual:generated-layouts'
 import pinia from '@/store'
+import { createHead } from '@unhead/vue'
 
+const head = createHead()
 
 import i18n from '@/modules/i18n'
 
@@ -18,4 +20,4 @@ const router = createRouter({
 })
 
 
-createApp(App).use(router).use(pinia).use(i18n).mount('#app')
+createApp(App).use(router).use(pinia).use(i18n).use(head).mount('#app')
