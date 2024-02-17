@@ -16,13 +16,15 @@ const { alphabet } = storeToRefs(store)
     </div>
 
     <div class="alphabet-letters">
-      <div
-        v-for="item in alphabet"
-        :key="item.id"
-        class="animated animated-fade-in animated-delay-0.3s"
-      >
-        <LetterCard :letter="item.title" />
-      </div>
+      <Loader :is-loading="alphabet.length == 0">
+        <div
+          v-for="item in alphabet"
+          :key="item.id"
+          class="animated animated-fade-in animated-delay-0.3s"
+        >
+          <LetterCard :letter="item.title" />
+        </div>
+      </Loader>
     </div>
   </div>
 </template>
@@ -37,11 +39,13 @@ const { alphabet } = storeToRefs(store)
   }
 
   &-letters {
+    position: relative;
     margin-top: 28px;
     display: flex;
     flex-wrap: wrap;
     gap: 36px;
     justify-content: center;
+    min-height: calc(100vh / 2);
   }
 }
 </style>
