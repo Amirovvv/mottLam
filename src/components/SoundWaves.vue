@@ -1,17 +1,21 @@
 <script setup lang="ts">
 import { useSound } from '@vueuse/sound'
 
-const props = defineProps(['sound'])
+interface SoundProps {
+  sound: string
+}
 
-const lowerNameSound = props.sound.toLowerCase()
+const props = defineProps<SoundProps>()
 
-const urlSound = `src/assets/sounds/letters/${lowerNameSound}.mp3`
+const lowerNameSound: string = props.sound.toLowerCase()
+
+const urlSound: string = `src/assets/sounds/letters/${lowerNameSound}.mp3`
 
 const { play } = useSound(urlSound, {
   interrupt: true,
-})
+}) as { play: () => void }
 
-const playSound = () => {
+const playSound = (): void => {
   play()
 }
 </script>

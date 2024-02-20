@@ -1,18 +1,18 @@
 <script setup lang="ts">
 const { locale } = useI18n()
 
-const changeLang = () => {
-  const selectedLang = locale.value === 'ru' ? 'ce' : 'ru'
+const changeLang = (): void => {
+  const selectedLang: string = locale.value === 'ru' ? 'ce' : 'ru'
   locale.value = selectedLang
   localStorage.setItem('selected-lang', selectedLang)
 }
 
-const buttonLangText = computed(() => {
+const buttonLangText: Ref<string> = computed((): string => {
   return locale.value === 'ru' ? 'ru' : 'ce'
 })
 
 onMounted(() => {
-  const getSelectedLang = localStorage.getItem('selected-lang')
+  const getSelectedLang: string | null = localStorage.getItem('selected-lang')
   if (getSelectedLang) {
     locale.value = getSelectedLang
   }

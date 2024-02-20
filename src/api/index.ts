@@ -1,8 +1,8 @@
-import axios from 'axios'
+import axios, { AxiosInstance } from 'axios'
 
-const url = import.meta.env.VITE_BASE_URL
+const url: string = import.meta.env.VITE_BASE_URL
 
-const api = axios.create({
+const api: AxiosInstance = axios.create({
   baseURL: url
 })
 

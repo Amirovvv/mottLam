@@ -1,5 +1,9 @@
 <script setup lang="ts">
-defineProps(['letter'])
+interface LetterProps {
+  letter: string
+}
+
+defineProps<LetterProps>()
 </script>
 
 <template>

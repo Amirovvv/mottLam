@@ -1,10 +1,9 @@
 <script setup lang="ts">
-defineProps({
-  isLoading: {
-    type: Boolean,
-    required: true,
-  },
-})
+interface LoaderProps {
+  isLoading: boolean
+}
+
+defineProps<LoaderProps>()
 </script>
 
 <template>

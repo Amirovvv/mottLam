@@ -1,12 +1,13 @@
 <script setup lang="ts">
 import { storeToRefs } from 'pinia'
 import { useAlphabetStore } from '@/store/alphabet.store'
+import { AlphabetItem } from '@/types/alphabet.types'
 
 const store = useAlphabetStore()
 
 store.fetchAlphabet()
 
-const { alphabet } = storeToRefs(store)
+const { alphabet } = storeToRefs(store) as { alphabet: Ref<AlphabetItem[]> }
 </script>
 
 <template>
