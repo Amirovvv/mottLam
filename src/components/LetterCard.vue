@@ -1,6 +1,8 @@
 <script setup lang="ts">
+import { AlphabetItem } from '@/types/alphabet.types'
+
 interface LetterProps {
-  letter: string
+  letter: AlphabetItem
 }
 
 defineProps<LetterProps>()
@@ -8,10 +10,12 @@ defineProps<LetterProps>()
 
 <template>
   <div class="letter">
-    <SoundWaves :sound="letter" />
+    <SoundWaves :sound="letter.title" />
 
-    <div>{{ letter }}</div>
-    <div class="letter-more">подробнее</div>
+    <div>{{ letter.title }}</div>
+    <router-link :to="{ name: '/[id]', params: { id: letter.id } }">
+      <div class="letter-more" v-if="letter.details">подробнее</div>
+    </router-link>
   </div>
 </template>
 
@@ -37,7 +41,7 @@ defineProps<LetterProps>()
 
   &-more {
     font-size: 14px;
-    visibility: hidden;
+    color: #1fc2ff;
   }
 }
 </style>

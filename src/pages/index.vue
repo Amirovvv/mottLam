@@ -21,9 +21,9 @@ const { alphabet } = storeToRefs(store) as { alphabet: Ref<AlphabetItem[]> }
         <div
           v-for="item in alphabet"
           :key="item.id"
-          class="animated animated-fade-in animated-delay-0.3s"
+          class="animated animated-fade-in animated-delay-0.05s"
         >
-          <LetterCard :letter="item.title" />
+          <LetterCard :letter="item" />
         </div>
       </Loader>
     </div>
