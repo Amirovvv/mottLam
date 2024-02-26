@@ -28,7 +28,7 @@ onMounted(() => {
           <div class="i-mdi-image-filter-hdr text-3xl"
         /></router-link>
         <div class="nav-links">
-          <router-link to="/" class="nav-link">алфавит</router-link>
+          <router-link to="/alphabet" class="nav-link">алфавит</router-link>
           <button class="nav-lang" @click="changeLang">
             {{ buttonLangText }}
           </button>

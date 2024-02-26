@@ -20,7 +20,7 @@ export default defineConfig({
       fonts: {
         roboto: {
           name: 'Roboto',
-          weights: ['400', '700', '900'],
+          weights: ['400', '500', '700', '900'],
         },
       }
     }),

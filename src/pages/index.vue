@@ -1,53 +1,67 @@
-<script setup lang="ts">
-import { storeToRefs } from 'pinia'
-import { useAlphabetStore } from '@/store/alphabet.store'
-import { AlphabetItem } from '@/types/alphabet.types'
-
-const store = useAlphabetStore()
-
-store.fetchAlphabet()
-
-const { alphabet } = storeToRefs(store) as { alphabet: Ref<AlphabetItem[]> }
-</script>
+<script setup lang="ts"></script>
 
 <template>
-  <div class="alphabet">
-    <div class="alphabet-title">
-      <h1>алфавит</h1>
+  <div class="main container-small">
+    <div class="main-sections">
+      <router-link to="/alphabet" class="main-sections-link">
+        <SectionCard title="Алфавит">
+          <template v-slot:logo>
+            <div class="i-noto-v1-a-button-blood-type"></div>
+          </template>
+        </SectionCard>
+      </router-link>
+      <SectionCard title="Игровой раздел" class="soon">
+        <template v-slot:logo>
+          <div class="i-twemoji-game-die"></div>
+        </template>
+        <template v-slot:soon
+          ><div class="main-sections__soon">скоро</div>
+        </template>
+      </SectionCard>
     </div>
-
-    <div class="alphabet-letters">
-      <Loader :is-loading="alphabet.length == 0">
-        <div
-          v-for="item in alphabet"
-          :key="item.id"
-          class="animated animated-fade-in animated-delay-0.05s"
-        >
-          <LetterCard :letter="item" />
-        </div>
-      </Loader>
+    <div class="main-about">
+      <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusamus
+        minima adipisci hic similique molestiae nobis tenetur exercitationem,
+        quis, error cupiditate laborum, voluptate mollitia cum unde architecto
+        reiciendis nesciunt repellat obcaecati.
+      </p>
     </div>
   </div>
 </template>
 
 <style scoped lang="scss">
-.alphabet {
-  &-title {
-    border-bottom: 1px solid #e0e0e0;
-    text-align: center;
-    padding: 40px 14px 14px;
-    text-transform: uppercase;
+.main {
+  margin-top: 40px;
+
+  &-sections {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 36px;
+
+    &-link {
+      display: contents;
+    }
+
+    &__soon {
+      border: 1px solid #e5e5e5;
+      border-radius: 10px;
+      padding: 5px 12px;
+      text-transform: uppercase;
+      font-size: 14px;
+      font-weight: 500;
+    }
   }
 
-  &-letters {
-    position: relative;
-    margin-top: 28px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 36px;
-    justify-content: center;
-    min-height: calc(100vh / 2);
+  &-about {
+    margin-top: 40px;
+    color: #4b4b4b;
   }
+}
+
+.soon {
+  opacity: 0.5;
+  pointer-events: none;
 }
 </style>
 

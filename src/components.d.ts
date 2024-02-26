@@ -13,6 +13,7 @@ declare module 'vue' {
     NavBar: typeof import('./components/NavBar.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    SectionCard: typeof import('./components/SectionCard.vue')['default']
     SoundWaves: typeof import('./components/SoundWaves.vue')['default']
   }
 }
