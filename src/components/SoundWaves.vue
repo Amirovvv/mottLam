@@ -15,14 +15,14 @@ const { play } = useSound(urlSound, {
   interrupt: true,
 }) as { play: () => void }
 
-const playSound = (): void => {
+function playSound(): void {
   play()
 }
 </script>
 
 <template>
   <button
-    @click="playSound"
     class="i-mdi-volume-high text-28px text-orange letter-icon"
-  ></button>
+    @click="playSound"
+  />
 </template>

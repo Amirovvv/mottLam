@@ -1,7 +1,7 @@
 <script setup lang="ts">
 const { locale } = useI18n()
 
-const changeLang = (): void => {
+function changeLang(): void {
   const selectedLang: string = locale.value === 'ru' ? 'ce' : 'ru'
   locale.value = selectedLang
   localStorage.setItem('selected-lang', selectedLang)
@@ -23,12 +23,14 @@ onMounted(() => {
   <header>
     <div class="container">
       <nav class="nav">
-        <router-link to="/" class="nav-logo"
-          >mottlam
-          <div class="i-mdi-image-filter-hdr text-3xl"
-        /></router-link>
+        <router-link to="/" class="nav-logo">
+          mottlam
+          <div class="i-mdi-image-filter-hdr text-3xl" />
+        </router-link>
         <div class="nav-links">
-          <router-link to="/alphabet" class="nav-link">алфавит</router-link>
+          <router-link to="/alphabet" class="nav-link">
+            алфавит
+          </router-link>
           <button class="nav-lang" @click="changeLang">
             {{ buttonLangText }}
           </button>

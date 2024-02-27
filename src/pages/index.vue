@@ -5,17 +5,19 @@
     <div class="main-sections">
       <router-link to="/alphabet" class="main-sections-link">
         <SectionCard title="Алфавит">
-          <template v-slot:logo>
-            <div class="i-noto-v1-a-button-blood-type"></div>
+          <template #logo>
+            <div class="i-noto-v1-a-button-blood-type" />
           </template>
         </SectionCard>
       </router-link>
       <SectionCard title="Игровой раздел" class="soon">
-        <template v-slot:logo>
-          <div class="i-twemoji-game-die"></div>
+        <template #logo>
+          <div class="i-twemoji-game-die" />
         </template>
-        <template v-slot:soon
-          ><div class="main-sections__soon">скоро</div>
+        <template #soon>
+          <div class="main-sections__soon">
+            скоро
+          </div>
         </template>
       </SectionCard>
     </div>

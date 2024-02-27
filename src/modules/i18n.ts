@@ -3,20 +3,20 @@ import { createI18n } from 'vue-i18n'
 const lang = {
   ru: {
     intro: {
-      hi: 'добро пожаловать!'
-    }
+      hi: 'добро пожаловать!',
+    },
   },
   ce: {
     intro: {
-      hi: 'марша догiийла!'
-    }
-  }
+      hi: 'марша догiийла!',
+    },
+  },
 }
 
 const i18n = createI18n({
   legacy: false,
   locale: 'ru',
-  messages: lang
+  messages: lang,
 })
 
 export default i18n

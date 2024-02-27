@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import { storeToRefs } from 'pinia'
+
 import { useAlphabetStore } from '@/store/alphabet.store'
-import { AlphabetItem } from '@/types/alphabet.types'
+import type { AlphabetItem } from '@/types/alphabet.types'
 
 const store = useAlphabetStore()
 
@@ -17,12 +18,8 @@ const { alphabet } = storeToRefs(store) as { alphabet: Ref<AlphabetItem[]> }
     </div>
 
     <div class="alphabet-letters">
-      <Loader :is-loading="alphabet.length == 0">
-        <div
-          v-for="item in alphabet"
-          :key="item.id"
-          class="animated animated-fade-in animated-delay-0.05s"
-        >
+      <Loader :is-loading="alphabet.length === 0">
+        <div v-for="item in alphabet" :key="item.id" class="animated animated-fade-in animated-delay-0.05s">
           <LetterCard :letter="item" />
         </div>
       </Loader>

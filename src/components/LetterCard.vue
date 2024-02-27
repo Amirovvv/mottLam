@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { AlphabetItem } from '@/types/alphabet.types'
+import type { AlphabetItem } from '@/types/alphabet.types'
 
 interface LetterProps {
   letter: AlphabetItem
@@ -14,7 +14,9 @@ defineProps<LetterProps>()
 
     <div>{{ letter.title }}</div>
     <router-link :to="{ name: '/alphabet/[id]', params: { id: letter.id } }">
-      <div class="letter-more" v-if="letter.details">подробнее</div>
+      <div v-if="letter.details" class="letter-more">
+        подробнее
+      </div>
     </router-link>
   </div>
 </template>

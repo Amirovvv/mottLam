@@ -1,8 +1,9 @@
 <script setup lang="ts">
 import { storeToRefs } from 'pinia'
 import { useRoute } from 'vue-router'
+
 import { useAlphabetStore } from '@/store/alphabet.store'
-import { AlphabetItem } from '@/types/alphabet.types'
+import type { AlphabetItem } from '@/types/alphabet.types'
 
 const route = useRoute()
 const store = useAlphabetStore()

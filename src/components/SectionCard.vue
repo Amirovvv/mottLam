@@ -10,13 +10,17 @@ defineProps<SectionProps>()
 <template>
   <div class="section-card">
     <div class="text-36px section-card__logo">
-      <slot name="logo"></slot>
+      <slot name="logo" />
     </div>
     <div class="section-card__content">
-      <div class="section-card__title">{{ title }}</div>
-      <div class="section-card__desc" v-if="desc">{{ desc }}</div>
+      <div class="section-card__title">
+        {{ title }}
+      </div>
+      <div v-if="desc" class="section-card__desc">
+        {{ desc }}
+      </div>
     </div>
-    <slot name="soon"></slot>
+    <slot name="soon" />
   </div>
 </template>
 

@@ -7,10 +7,10 @@ defineProps<LoaderProps>()
 </script>
 
 <template>
-  <div class="loader-container" v-if="isLoading">
-    <div class="loader"></div>
+  <div v-if="isLoading" class="loader-container">
+    <div class="loader" />
   </div>
-  <slot v-else></slot>
+  <slot v-else />
 </template>
 
 <style lang="scss" scoped>
@@ -37,6 +37,7 @@ defineProps<LoaderProps>()
   0% {
     transform: rotate(0deg);
   }
+
   100% {
     transform: rotate(360deg);
   }

@@ -1,5 +1,5 @@
 export interface AlphabetItem {
-  id: number;
-  title: string;
-  details?: string;
+  id: number
+  title: string
+  details?: string
 }
