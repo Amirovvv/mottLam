@@ -1,13 +1,19 @@
 @import './_variables.scss';
 
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
 }
 
-html, body, #app {
+html,
+body,
+#app {
+  margin: 0;
+  padding: 0;
   height: 100%;
+}
+
+h1 {
+  margin: 0;
 }
 
 main {
@@ -16,9 +22,9 @@ main {
   flex: 1 1 0%;
 }
 
-#app {  
+#app {
   display: flex;
-  flex-direction: column;    
+  flex-direction: column;
   justify-content: space-between;
 }
 
@@ -46,4 +52,11 @@ button {
   font-size: inherit;
   font-family: inherit;
   cursor: pointer;
+}
+
+.markdown-body blockquote {
+  padding: 0 1em;
+  color: #656d76;
+  border-left: 0.25em solid #d0d7de;
+  margin: 0;
 }

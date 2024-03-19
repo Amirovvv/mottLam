@@ -1,12 +1,13 @@
-import path from 'node:path'
-import { defineConfig } from 'vite'
 import Vue from '@vitejs/plugin-vue'
+import path from 'node:path'
 import VueRouter from 'unplugin-vue-router/vite'
+import { defineConfig } from 'vite'
 
+import { unheadVueComposablesImports } from '@unhead/vue'
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
-import { unheadVueComposablesImports } from '@unhead/vue'
-import Layouts from 'vite-plugin-vue-layouts';
+import Markdown from 'unplugin-vue-markdown/vite'
+import Layouts from 'vite-plugin-vue-layouts'
 
 import UnoCSS from 'unocss/vite'
 
@@ -21,7 +22,9 @@ export default defineConfig({
     VueRouter({
       dts: 'src/typed-router.d.ts',
     }),
-    Vue(),
+    Vue({
+      include: [/\.vue$/, /\.md$/],
+    }),
     AutoImport({
       imports: [
         'vue',
@@ -32,9 +35,12 @@ export default defineConfig({
       dts: 'src/auto-imports.d.ts',
     }),
     Components({
+      extensions: ['vue', 'md'],
+      include: [/\.vue$/, /\.vue\?vue/, /\.md$/],
       dts: 'src/components.d.ts',
     }),
     Layouts(),
+    Markdown({}),
     UnoCSS()
   ],
   css: {
