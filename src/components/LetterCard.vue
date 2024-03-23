@@ -13,7 +13,7 @@ defineProps<LetterProps>()
     <SoundWaves :sound="letter.title" />
 
     <div>{{ letter.title }}</div>
-    <router-link :to="{ name: '/alphabet/[id]', params: { id: letter.id } }">
+    <router-link :to="{ name: '/alphabet/[id]', params: { id: letter.title } }">
       <div v-if="letter.details" class="letter-more">
         подробнее
       </div>

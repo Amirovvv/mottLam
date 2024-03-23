@@ -1,28 +1,25 @@
 <script setup lang="ts">
-import { storeToRefs } from 'pinia'
 import { useRoute } from 'vue-router'
 
-import { useAlphabetStore } from '@/store/alphabet.store'
-import type { AlphabetItem } from '@/types/alphabet.types'
-
 const route = useRoute()
-const store = useAlphabetStore()
 
-store.fetchAlphabetLetter(route.params.id)
+const letter = route.params.id
 
-const { letter } = storeToRefs(store) as { letter: Ref<AlphabetItem> }
+const mdComp = computed<Component>(() => {
+  return defineAsyncComponent(() =>
+    import(`../../components/details/${letter}.md`),
+  )
+})
 </script>
 
 <template>
-  <div class="details">
-    <Loader :is-loading="!letter">
+  <div class="details container-small">
+    <Loader :is-loading="!letter.length">
       <div class="details-title">
-        <h1>Буква {{ letter.title }}</h1>
-        <SoundWaves :sound="letter.title" />
+        <h1>Буква {{ letter }}</h1>
+        <SoundWaves :sound="letter" />
       </div>
-      <div class="details-text">
-        {{ letter.details }}
-      </div>
+      <component :is="mdComp" class="details-md" />
     </Loader>
   </div>
 </template>
@@ -37,11 +34,14 @@ const { letter } = storeToRefs(store) as { letter: Ref<AlphabetItem> }
     gap: 14px;
     border-bottom: 1px solid #e0e0e0;
     padding-bottom: 6px;
+
+    h1 {
+      font-weight: 500;
+    }
   }
 
-  &-text {
+  &-md {
     font-size: 18px;
-    margin-top: 8px;
   }
 }
 </style>
